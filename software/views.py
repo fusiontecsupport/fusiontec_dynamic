@@ -9,6 +9,9 @@ from django.core.mail import EmailMessage, send_mail
 from django.conf import settings
 from .forms import JobApplicationForm
 from django.template.loader import render_to_string
+from .models import ContactSubmission
+
+
 
 def home(request):
     # Existing queries
@@ -47,64 +50,6 @@ def custom_admin_logout(request):
     logout(request)
     messages.success(request, "Logout successfully")
     return redirect('/')
-
-# def career_application(request):
-#     if request.method == 'POST':
-#         form = JobApplicationForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             application = form.save()
-
-#             # Prepare admin email
-#             admin_subject = "New Job Application Received"
-#             admin_body = render_to_string('software/email_template_admin.html', {
-#                 'application': application
-#             })
-
-#             admin_email = EmailMessage(
-#                 subject=admin_subject,
-#                 body=admin_body,
-#                 from_email=settings.EMAIL_HOST_USER,
-#                 to=[settings.EMAIL_HOST_USER],
-#             )
-#             admin_email.content_subtype = "html"
-
-#             # Attach resume file if uploaded
-#             if application.resume:
-#                 admin_email.attach(application.resume.name, application.resume.read(), application.resume.file.content_type)
-
-#             admin_email.send()
-
-#             # Optional: send confirmation email to applicant
-#             applicant_subject = "Thank you for your application"
-#             applicant_message = f"Dear {application.first_name},\n\nThank you for applying for the position of {application.position}. We have received your application and will review it shortly.\n\nBest regards,\nFusiontec Team"
-#             send_mail(
-#                 subject=applicant_subject,
-#                 message=applicant_message,
-#                 from_email=settings.EMAIL_HOST_USER,
-#                 recipient_list=[application.email],
-#                 fail_silently=True,
-#             )
-
-#             messages.success(request, "Application submitted successfully!")
-#             return redirect('job_application_form')
-#         else:
-#             messages.error(request, "There was an error with your application. Please check the form.")
-
-#     else:
-#         form = JobApplicationForm()
-
-#     return render(request, 'software/career_form.html', {
-#         'form': form,
-#         'jobs': JobOpening.objects.filter(is_active=True),
-#     })
-import mimetypes
-from django.core.mail import EmailMessage
-from django.template.loader import render_to_string
-from django.contrib import messages
-from django.shortcuts import render, redirect
-from django.conf import settings
-from .forms import JobApplicationForm
-from .models import JobOpening
 
 def career_application(request):
     if request.method == 'POST':
@@ -163,17 +108,8 @@ def career_application(request):
         'jobs': JobOpening.objects.filter(is_active=True),
     })
 
-
-
 def about_us(request):
     return render(request, 'software/about_us.html')
-
-from django.conf import settings
-from django.core.mail import EmailMessage
-from django.contrib import messages
-from django.shortcuts import render
-from .models import ContactSubmission
-from django.template.loader import render_to_string
 
 def contact(request):
     if request.method == 'POST':
