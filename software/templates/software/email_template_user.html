@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Thank You for Your Application</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #212529;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      background-color: #ffffff;
+      margin: auto;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 25px 30px;
+    }
+    .header {
+      background-color: #28a745;
+      color: #fff;
+      padding: 15px 20px;
+      font-size: 24px;
+      font-weight: 600;
+      border-radius: 6px 6px 0 0;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    p {
+      line-height: 1.5;
+      margin-bottom: 16px;
+      color: #343a40;
+    }
+    .label {
+      font-weight: 600;
+      color: #495057;
+      display: inline-block;
+      width: 160px;
+      vertical-align: top;
+    }
+    .value {
+      color: #212529;
+      display: inline-block;
+      max-width: 400px;
+      word-wrap: break-word;
+    }
+    a {
+      color: #28a745;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .cover-letter {
+      white-space: pre-wrap;
+      line-height: 1.5;
+      border: 1px solid #ced4da;
+      background: #e9f7ef;
+      padding: 10px;
+      border-radius: 4px;
+      max-height: 200px;
+      overflow-y: auto;
+      margin-top: 4px;
+    }
+    .mail_logo {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .mail_logo img {
+      width: 150px;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(40,167,69,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">Thank You for Your Application</div>
+
+    <p>Dear {{ application.first_name }} {{ application.last_name }},</p>
+    <p>Thank you for applying for the position of <strong>{{ application.position }}</strong> at Fusiontec Software.</p>
+    <p>Here is a copy of your submitted details:</p>
+
+    <p><span class="label">Email:</span> <span class="value">{{ application.email }}</span></p>
+    <p><span class="label">Phone:</span> <span class="value">{{ application.phone }}</span></p>
+    <p><span class="label">LinkedIn Profile:</span> <span class="value">{{ application.linkedin }}</span></p>
+    <p><span class="label">Experience:</span> <span class="value">{{ application.experience }}</span></p>
+    <p><span class="label">Employment Status:</span> <span class="value">{{ application.employment_status }}</span></p>
+
+    <p><span class="label">Cover Letter:</span><br>
+      <span class="value cover-letter">{{ application.cover_letter|linebreaks }}</span>
+    </p>
+
+    <p><span class="label">Resume:</span>
+      <span class="value">
+        {% if application.resume %}
+          Resume Received
+        {% else %}
+          No resume attached.
+        {% endif %}
+      </span>
+    </p>
+
+    <p>We will review your application and get back to you soon.</p>
+
+    <p class="mail_logo">
+      <a href="https://fusiontecsoftware.com/" target="_blank" rel="noopener">
+        <img src="https://fusiontecsoftware.com/assets/img/fusiontec/logo.png" alt="Fusiontec Logo" />
+      </a>
+    </p>
+    <p style="text-align:center; font-weight:600; color:#28a745;">Best regards,<br>Fusiontec Software Team</p>
+  </div>
+</body>
+</html>

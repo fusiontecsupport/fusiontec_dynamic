@@ -10,11 +10,12 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('terms/', views.terms, name='terms'),
     path('privacy/', views.privacy, name='privacy'),
+    
+    # ✅ Add this line (assuming you have a view called job_application_form)
+    path('apply/', views.career_application, name='job_application_form'),
 ]
 
-# Serve static files
+# Serve static and media files
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-# Serve media files (uploaded images) in development mode
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

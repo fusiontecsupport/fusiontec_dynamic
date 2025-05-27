@@ -54,8 +54,6 @@ class FAQ(models.Model):
     def __str__(self):
         return self.question
     
-
-# careers page
 class JobOpening(models.Model):
     title = models.CharField(max_length=255)
     experience = models.CharField(max_length=100)
@@ -65,3 +63,47 @@ class JobOpening(models.Model):
 
     def __str__(self):
         return self.title
+
+class JobApplication(models.Model):
+    EXPERIENCE_CHOICES = [
+        ("Fresher", "Fresher"),
+        ("1-3 Years", "1-3 Years"),
+        ("3-5 Years", "3-5 Years"),
+        ("5+ Years", "5+ Years"),
+        # ("Other", "Other"),
+    ]
+    STATUS_CHOICES = [
+        ("Employed", "Employed"),
+        ("Self-Employed", "Self-Employed"),
+        ("Unemployed", "Unemployed"),
+        ("Student", "Student"),
+    ]
+
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.CharField(max_length=15)
+    linkedin = models.URLField(blank=True, null=True)
+    position = models.ForeignKey(JobOpening, on_delete=models.SET_NULL, null=True)
+    experience = models.CharField(max_length=20, choices=EXPERIENCE_CHOICES)
+    # experience_other = models.CharField(max_length=100, blank=True, null=True)
+    employment_status = models.CharField(max_length=20, choices=STATUS_CHOICES)
+    resume = models.FileField(upload_to='resumes/')
+    cover_letter = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+
+
+#contact form
+
+class ContactSubmission(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phone = models.CharField(max_length=15)
+    subject = models.CharField(max_length=150)
+    message = models.TextField()
+    submitted_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.subject} ({self.submitted_at.strftime('%Y-%m-%d %H:%M')})"

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>New Job Application Received</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #212529;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      background-color: #ffffff;
+      margin: auto;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px 30px;
+    }
+    .header {
+      background-color: #0d6efd;
+      color: #fff;
+      padding: 15px 20px;
+      font-size: 24px;
+      font-weight: 600;
+      border-radius: 6px 6px 0 0;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .row {
+      margin-bottom: 15px;
+    }
+    .label {
+      font-weight: 600;
+      color: #495057;
+      display: inline-block;
+      width: 180px;
+      vertical-align: top;
+    }
+    .value {
+      color: #212529;
+      display: inline-block;
+      max-width: 380px;
+      word-wrap: break-word;
+    }
+    a {
+      color: #0d6efd;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .cover-letter {
+      white-space: pre-wrap;
+      line-height: 1.5;
+      border: 1px solid #ced4da;
+      background: #f1f3f5;
+      padding: 10px;
+      border-radius: 4px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">New Job Application Received for <br>{{ application.position }} </div>
+
+    <div class="row">
+      <span class="label">Name:</span>
+      <span class="value">{{ application.first_name }} {{ application.last_name }}</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Email:</span>
+      <span class="value">{{ application.email }}</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Phone:</span>
+      <span class="value">{{ application.phone }}</span>
+    </div>
+
+    <div class="row">
+      <span class="label">LinkedIn Profile:</span>
+      <span class="value">{{ application.linkedin }}</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Position Applied For:</span>
+      <span class="value">{{ application.position }}</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Experience:</span>
+      <span class="value">{{ application.experience }}</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Employment Status:</span>
+      <span class="value">{{ application.employment_status }}</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Cover Letter:</span>
+      <div class="value cover-letter">{{ application.cover_letter|linebreaks }}</div>
+    </div>
+
+    <div class="row">
+      <span class="label">Resume:</span>
+      <span class="value">
+        {% if application.resume %}
+          <a href="{{ application.resume.url }}" target="_blank" rel="noopener">Download Resume</a>
+        {% else %}
+          No resume attached.
+        {% endif %}
+      </span>
+    </div>
+  </div>
+</body>
+</html>

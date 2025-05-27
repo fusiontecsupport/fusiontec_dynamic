@@ -121,36 +121,46 @@
 
                           <!-- RIGHT COLUMN -->
                           <div class="col-lg-6 d-flex">
-                            <form action="https://formsubmit.co/support@fusiontec.com" method="POST" enctype="multipart/form-data" class="php-email-forms flex-fill d-flex flex-column justify-content-between" data-aos="fade-up" data-aos-delay="200">
-
-                              <!-- Honeypot -->
-                              <input type="text" name="_honey" style="display:none" tabindex="-1" aria-hidden="true">
-                              <input type="hidden" name="_template" value="table">
+                            
+                            <form method="POST" enctype="multipart/form-data" class="php-email-forms flex-fill d-flex flex-column justify-content-between" data-aos="fade-up" data-aos-delay="200">
+                              {% csrf_token %}
+                              {% if messages %}
+                                  <div id="message-container">
+                                    {% for message in messages %}
+                                      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                                    {% endfor %}
+                                  </div>
+                                  <script>
+                                    // Auto-close messages after 3 seconds (3000ms)
+                                    setTimeout(function() {
+                                      const msg = document.getElementById('message-container');
+                                      if (msg) {
+                                        msg.style.display = 'none';
+                                      }
+                                    }, 3000);
+                                  </script>
+                                {% endif %}
 
                               <div class="row gy-4">
                                 <div class="col-md-6">
                                   <label for="name" class="form-label">Your Name</label>
-                                  <input type="text" id="name" name="Name" class="form-control" placeholder="Enter your name" required maxlength="100" pattern="[A-Za-z\s]{1,100}">
+                                  <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required maxlength="100" pattern="[A-Za-z\s]{1,100}">
                                 </div>
                                 <div class="col-md-6">
                                   <label for="email" class="form-label">Your Email</label>
-                                  <input type="email" id="email" name="Email" class="form-control" placeholder="Enter your email" required maxlength="100">
+                                  <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required maxlength="100">
                                 </div>
                                 <div class="col-md-6">
                                   <label for="subject" class="form-label">Subject</label>
-                                  <input type="text" id="subject" name="Subject" class="form-control" placeholder="Enter the subject" required maxlength="50">
+                                  <input type="text" id="subject" name="subject" class="form-control" placeholder="Enter the subject" required maxlength="50">
                                 </div>
                                 <div class="col-md-6">
                                   <label for="phone" class="form-label">Your Phone</label>
-                                  <input type="text" id="phone" name="Phone" class="form-control" placeholder="Enter your phone number" required maxlength="10" pattern="\d{10}">
+                                  <input type="text" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required maxlength="10" pattern="\d{10}">
                                 </div>
                                 <div class="col-12">
                                   <label for="message" class="form-label">Message</label>
-                                  <textarea id="message" name="Message" class="form-control" rows="6" placeholder="Type your message here..." required maxlength="1000"></textarea>
-                                </div>
-                                <div class="col-12">
-                                  <label for="resume" class="form-label">Document Upload (optional)</label>
-                                  <input type="file" name="Resume" id="resume" class="form-control" accept=".pdf,.doc,.docx,.txt">
+                                  <textarea id="message" name="message" class="form-control" rows="6" placeholder="Type your message here..." required maxlength="1000"></textarea>
                                 </div>
                                 <div class="col-12 text-center">
                                   <button type="submit">Send Message</button>
@@ -158,6 +168,7 @@
                               </div>
                             </form>
                           </div>
+
                         </div>
                       </div>
                     </div>  
