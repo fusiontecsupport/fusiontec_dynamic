@@ -1,0 +1,180 @@
+{% extends 'software/base2.html' %}
+
+{% load static %}
+
+{% block title %}Fusiontec Software - Contact{% endblock %}
+
+{% block content2 %}
+
+<!-- Topbar -->
+        <div class="topbar d-flex align-items-center justify-content-between px-3">
+          <div class="topbar-left">
+            <small class="ms-4"><i class="bi bi-phone me-1"></i>Office:<a href="tel:+914446072076">+91 044 – 46072076</a></small>
+            <small class="ms-4"><i class="bi bi-phone me-1"></i>Support:<a href="tel:+919841446699">+91 98414 46699</a></small>
+          </div>
+          <div class="topbar-right">
+            <small><i class="bi bi-envelope me-1"></i><a href="mailto:sales@fusiontec.com">sales@fusiontec.com</a></small>
+            <a href="https://www.facebook.com/fusiontecsoftware/" class="text-white ms-3"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.linkedin.com/company/fusiontec-software/" class="text-white ms-3"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto">
+        <img src="{% static 'software/img/fusiontec/logo.png' %}" alt="">
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{% url 'home' %}">Home<br></a></li>
+          <li><a href="{% url 'about_us' %}">About Us</a></li>
+          <li><a href="{% url 'career' %}">Careers</a></li>
+          <li><a href="{% url 'contact' %}"class="active">Contact</a></li>
+          <li class="dropdown"><a href="#"><span>Downloads</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="static/software/brochure/Company Profile.pdf" download>Company Profile<i class="bi bi-download me-2"></i></a></li>
+              <li><a href="static/software/brochure/SCM ERP.pdf" download>SCM ERP<i class="bi bi-download me-2"></i></a></li>
+              <li><a href="static/software/brochure/Sales Order Processing ERP.pdf" download>Sales Order Processing ERP<i class="bi bi-download me-2"></i></a></li>
+              <li><a href="static/software/brochure/Container & Logistics ERP.pdf" download>Container & Logistics ERP<i class="bi bi-download me-2"></i></a></li>
+              <li><a href="static/software/brochure/hospital_ERP.pdf" download>Hospital Management ERP<i class="bi bi-download me-2"></i></a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <a class="btn-getstarted ms-2" href="/admin/" target="_blank">Admin login</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <section id="abouts" class="abouts section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+           <!-- Contact Section -->
+                  <section id="contact" class="contact">
+                      <div class="container" data-aos="fade-up">
+                        <div class="container section-title" data-aos="fade-up">
+                          <h2>Contact</h2>
+                          <p>Contact Us</p>
+                        </div>
+                        <div class="row gy-4 d-flex align-items-stretch">
+
+                          <!-- LEFT COLUMN -->
+                          <div class="col-lg-6 d-flex">
+                            <div class="row gy-4 flex-fill">
+                              <!-- Address -->
+                              <div class="col-md-6 d-flex">
+                                <div class="info-item flex-fill" data-aos="fade" data-aos-delay="200">
+                                  <i class="bi bi-geo-alt"></i>
+                                  <h3>Address</h3>
+                                  <p>Suite No 17-A,</p>
+                                  <p>2nd Floor, Crescent Court, </p>
+                                  <p>Door No-963,</p>
+                                  <p>India, Tamil Nadu,</p>
+                                  <p>Poonamallee Highway,</p>
+                                  <p>Chennai - 600084.</p>
+                                </div>
+                              </div>
+
+                              <!-- Call Us -->
+                              <div class="col-md-6 d-flex">
+                                <div class="info-item flex-fill" data-aos="fade" data-aos-delay="300" style="line-height: 1.6;">
+                                  <i class="bi bi-telephone"></i>
+                                  <h3 class="mb-3">Call Us</h3>
+                                  <p><strong>Office:</strong>
+                                    <a href="tel:+914446072076">+91 044 – 46072076</a>
+                                  </p>
+                                  <p><strong>For Sales:</strong><br>
+                                    <a href="tel:+919123546570">+91 91235 46570 <br>– G Prasheed Kumar</a>
+                                  </p>
+                                  <p><strong>For Technical:</strong><br>
+                                    <a href="tel:+919123546569">+91 91235 46569 <br>– V. Dinesh</a>
+                                  </p>
+                                  <p style="background-color: #e9fbe9; padding: 5px 10px; border-left: 5px solid #263A85; border-radius: 8px;">
+                                    <strong>Customer Support:</strong><br>
+                                    <a href="tel:+919841446699" style="color: #263A85;">+91 98414 46699</a>
+                                  </p>
+                                </div>
+                              </div>
+
+                              <!-- Email -->
+                              <div class="col-md-6 d-flex">
+                                <div class="info-item flex-fill" data-aos="fade" data-aos-delay="400">
+                                  <i class="bi bi-envelope"></i>
+                                  <h3>Email Us</h3>
+                                  <p>
+                                    <a href="mailto:sales@fusiontec.com">sales@fusiontec.com</a>
+                                  </p>
+                                </div>
+                              </div>
+
+                              <!-- Open Hours -->
+                              <div class="col-md-6 d-flex">
+                                <div class="info-item flex-fill" data-aos="fade" data-aos-delay="500">
+                                  <i class="bi bi-clock"></i>
+                                  <h3>Open Hours</h3>
+                                  <p>Monday - Saturday</p>
+                                  <p>10:00 AM - 06:00 PM</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- RIGHT COLUMN -->
+                          <div class="col-lg-6 d-flex">
+                            <form action="https://formsubmit.co/support@fusiontec.com" method="POST" enctype="multipart/form-data" class="php-email-forms flex-fill d-flex flex-column justify-content-between" data-aos="fade-up" data-aos-delay="200">
+
+                              <!-- Honeypot -->
+                              <input type="text" name="_honey" style="display:none" tabindex="-1" aria-hidden="true">
+                              <input type="hidden" name="_template" value="table">
+
+                              <div class="row gy-4">
+                                <div class="col-md-6">
+                                  <label for="name" class="form-label">Your Name</label>
+                                  <input type="text" id="name" name="Name" class="form-control" placeholder="Enter your name" required maxlength="100" pattern="[A-Za-z\s]{1,100}">
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="email" class="form-label">Your Email</label>
+                                  <input type="email" id="email" name="Email" class="form-control" placeholder="Enter your email" required maxlength="100">
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="subject" class="form-label">Subject</label>
+                                  <input type="text" id="subject" name="Subject" class="form-control" placeholder="Enter the subject" required maxlength="50">
+                                </div>
+                                <div class="col-md-6">
+                                  <label for="phone" class="form-label">Your Phone</label>
+                                  <input type="text" id="phone" name="Phone" class="form-control" placeholder="Enter your phone number" required maxlength="10" pattern="\d{10}">
+                                </div>
+                                <div class="col-12">
+                                  <label for="message" class="form-label">Message</label>
+                                  <textarea id="message" name="Message" class="form-control" rows="6" placeholder="Type your message here..." required maxlength="1000"></textarea>
+                                </div>
+                                <div class="col-12">
+                                  <label for="resume" class="form-label">Document Upload (optional)</label>
+                                  <input type="file" name="Resume" id="resume" class="form-control" accept=".pdf,.doc,.docx,.txt">
+                                </div>
+                                <div class="col-12 text-center">
+                                  <button type="submit">Send Message</button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>  
+                    
+                    <!-- End Contact Form -->    
+                    
+                    <div class="map">
+                        <h3 class="map_h3">Embeded Location</h3>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3516.908343020406!2d80.
+                    25497267454828!3d13.079514812504257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52660a5a1e77b5%3A0x14cfe6c74001123!2sFusiontec%20Software!5e1!3m2!1sen!2sin!4v1747387940264!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                </div>
+            </section><!-- /Contact Section -->
+        </div>
+    </section>
+</main>
+
+{% endblock %}

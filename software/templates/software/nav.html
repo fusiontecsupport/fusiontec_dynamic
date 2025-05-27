@@ -1,0 +1,61 @@
+
+{% load static %}
+
+{% block nav %}
+
+ <!-- Topbar -->
+        <div class="topbar d-flex align-items-center justify-content-between px-3">
+          <div class="topbar-left">
+            <small class="ms-4"><i class="bi bi-phone me-1"></i>Office:<a href="tel:+914446072076">+91 044 – 46072076</a></small>
+            <small class="ms-4"><i class="bi bi-phone me-1"></i>Support:<a href="tel:+919841446699">+91 98414 46699</a></small>
+          </div>
+          <div class="topbar-right">
+            <small><i class="bi bi-envelope me-1"></i><a href="mailto:sales@fusiontec.com">sales@fusiontec.com</a></small>
+            <a href="https://www.facebook.com/fusiontecsoftware/" class="text-white ms-3"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.linkedin.com/company/fusiontec-software/" class="text-white ms-3"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto">
+        <img src="{% static 'software/img/fusiontec/logo.png' %}" alt="">
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home<br></a></li>
+          <li class="dropdown"><a href="#about"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{% url 'about_us' %}">Who We Are? </a></li>
+            </ul>
+          </li>
+          <li><a href="#services">Services</a></li>
+          <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#faq">F.A.Q</a></li>
+              <li><a href="#case_study">Case Study</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+          </li>
+          <li><a href="#clients">Partners</a></li>
+          <li><a href="#client">Clients</a></li>
+          <li><a href="#recent-posts">Blog</a></li>
+          <li><a href="{% url 'career' %}">Careers</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li class="dropdown"><a href="#"><span>Downloads</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="static/software/brochure/Company Profile.pdf" download>Company Profile<i class="bi bi-download me-2"></i></a></li>
+              <li><a href="static/software/brochure/SCM ERP.pdf" download>SCM ERP<i class="bi bi-download me-2"></i></a></li>
+              <li><a href="static/software/brochure/Sales Order Processing ERP.pdf" download>Sales Order Processing ERP<i class="bi bi-download me-2"></i></a></li>
+              <li><a href="static/software/brochure/Container & Logistics ERP.pdf" download>Container & Logistics ERP<i class="bi bi-download me-2"></i></a></li>
+              <li><a href="static/software/brochure/hospital_ERP.pdf" download>Hospital Management ERP<i class="bi bi-download me-2"></i></a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <a class="btn-getstarted ms-2" href="/admin/" target="_blank">Admin login</a>
+      </div>
+  </header>
+
+{% endblock %}

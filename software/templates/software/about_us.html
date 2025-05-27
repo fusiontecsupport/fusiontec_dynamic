@@ -1,0 +1,345 @@
+{% extends 'software/base2.html' %}
+
+{% load static %}
+
+{% block title %}Fusiontec Software - About Us{% endblock %}
+
+{% block content2 %}
+
+ <!-- Topbar -->
+        <div class="topbar d-flex align-items-center justify-content-between px-3">
+          <div class="topbar-left">
+            <small class="ms-4"><i class="bi bi-phone me-1"></i>Office:<a href="tel:+914446072076">+91 044 – 46072076</a></small>
+            <small class="ms-4"><i class="bi bi-phone me-1"></i>Support:<a href="tel:+919841446699">+91 98414 46699</a></small>
+          </div>
+          <div class="topbar-right">
+            <small><i class="bi bi-envelope me-1"></i><a href="mailto:sales@fusiontec.com">sales@fusiontec.com</a></small>
+            <a href="https://www.facebook.com/fusiontecsoftware/" class="text-white ms-3"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.linkedin.com/company/fusiontec-software/" class="text-white ms-3"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto">
+        <img src="{% static 'software/img/fusiontec/logo.png' %}" alt="">
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{% url 'home' %}">Home<br></a></li>
+          <li class="dropdown"><a href="{% url 'about_us' %}" class="active"><span>About Us</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#abouts">Who We Are? </a></li>
+              <li><a href="#features">Our Mission</a></li>
+              <li><a href="#call-to-action">Our Vision</a></li>
+              <li><a href="#alt-features">Quality Policy</a></li>
+            </ul>
+          </li>
+          <li><a href="{% url 'career' %}">Careers</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li class="dropdown"><a href="#"><span>Downloads</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="static/software/brochure/Company Profile.pdf" download>Company Profile<i class="bi bi-download me-2"></i></a></li>
+              <li><a href="static/software/brochure/SCM ERP.pdf" download>SCM ERP<i class="bi bi-download me-2"></i></a></li>
+              <li><a href="static/software/brochure/Sales Order Processing ERP.pdf" download>Sales Order Processing ERP<i class="bi bi-download me-2"></i></a></li>
+              <li><a href="static/software/brochure/Container & Logistics ERP.pdf" download>Container & Logistics ERP<i class="bi bi-download me-2"></i></a></li>
+              <li><a href="static/software/brochure/hospital_ERP.pdf" download>Hospital Management ERP<i class="bi bi-download me-2"></i></a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <a class="btn-getstarted ms-2" href="/admin/" target="_blank">Admin login</a>
+    </div>
+  </header>
+
+<main class="main">
+    <!-- About Section -->
+    <section id="abouts" class="abouts section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4 align-items-center justify-content-between">
+            <div class="col-xl-5" data-aos="fade-up" data-aos-delay="200">
+              <span class="abouts-meta">MORE ABOUT US</span>
+              <h2 class="abouts-title">Transforming Businesses with Innovative Technology</h2>
+              <p class="abouts-description">At Fusiontec Software, we believe in empowering organizations through technology. Since our inception, we have carved a niche in the competitive IT landscape by offering comprehensive software solutions that are intuitive, reliable, and cost-effective. Our expertise spans various industries, enabling us to address complex business challenges with simple yet impactful solutions.</p>
+              <div class="container section-title" data-aos="fade-up">
+                <h2>Our Core Values</h2>
+              </div>
+              <div class="row feature-list-wrapper">
+                <div class="col-md-6">
+                  <ul class="feature-list">
+                    <li><i class="bi bi-check-circle-fill"></i>Customer-Centric Approach</li>
+                    <li><i class="bi bi-check-circle-fill"></i>Quality Excellence</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul class="feature-list">
+                    <li><i class="bi bi-check-circle-fill"></i>Integrity & Transparency</li>
+                    <li><i class="bi bi-check-circle-fill"></i>Continuous Innovation</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="info-wrapper">
+                <div class="row gy-4">
+                  <div class="col-lg-5">
+                  </div>
+                  <div class="col-lg-7">
+                    <div class="contact-info d-flex align-items-center gap-2">
+                      <i class="bi bi-telephone-fill"></i>
+                      <div>
+                        <p class="contact-label">Call us anytime</p>
+                        <p class="contact-number"><a href="tel:+919123546570">+91 91235 46570 <br>– G Prasheed Kumar</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="image-wrapper">
+                <div class="images position-relative" data-aos="zoom-out" data-aos-delay="400">
+                  <img src="{% static 'software/img/fusiontec/about-5.webp' %}" alt="Business Meeting" class="img-fluid main-image rounded-4">
+                  <img src="{% static 'software/img/fusiontec/about-2.webp' %}" alt="Team Discussion" class="img-fluid small-image rounded-4">
+                </div>
+                <div class="experience-badge floating">
+                  <h3>25+ <span>Years</span></h3>
+                  <p>Of experience in business service</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section><!-- /About Section -->
+
+      <!-- Ou mission Section -->
+    <section id="features" class="features section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Mission</h2>
+        <p>To deliver exceptional IT solutions that build lasting client relationships through:<br></p>
+      </div><!-- End Section Title -->
+      <div class="container">
+        <div class="mission">
+          <div class="row gy-5">
+            <div class="col-xl-6 mission_img" data-aos="zoom-out" data-aos-delay="100">
+              <img src="{% static 'software/img/features.png' %}" class="img-fluid" alt="">
+            </div>
+            <div class="col-xl-6 d-flex mission_content" data-aos="fade-up" data-aos-delay="200">
+              <div class="row align-self-center gy-4">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                  <div class="feature-box d-flex align-items-center">
+                    <i class="bi bi-check"></i>
+                    <h3>Gaining Customer Confidence</h3>
+                  </div>
+                </div><!-- End Feature Item -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                  <div class="feature-box d-flex align-items-center">
+                    <i class="bi bi-check"></i>
+                    <h3>Providing Products & Services of the Highest Quality</h3>
+                  </div>
+                </div><!-- End Feature Item -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                  <div class="feature-box d-flex align-items-center">
+                    <i class="bi bi-check"></i>
+                    <h3>Offering Customer Service Par Excellence</h3>
+                  </div>
+                </div><!-- End Feature Item -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                  <div class="feature-box d-flex align-items-center">
+                    <i class="bi bi-check"></i>
+                    <h3>Building & Maintaining Customer Relationships for Life</h3>
+                  </div>
+                </div><!-- End Feature Item -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /our mission Section -->
+
+    <!-- Why choose Us Section -->
+    <section id="features" class="features section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Why choose Us?</h2>
+        </div><!-- End Section Title -->
+            <div class="container" id="section_why">
+                <div class="col-xl-6 d-flex">
+                <div class="row align-self-center gy-4">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-box d-flex align-items-center">
+                        <i class="bi bi-check"></i>
+                        <h3>Industry-Specific Solutions</h3>
+                    </div>
+                    </div><!-- End Feature Item -->
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-box d-flex align-items-center">
+                        <i class="bi bi-check"></i>
+                        <h3>User-Friendly Software</h3>
+                    </div>
+                    </div><!-- End Feature Item -->
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-box d-flex align-items-center">
+                        <i class="bi bi-check"></i>
+                        <h3>Reliable Customer Support</h3>
+                    </div>
+                    </div><!-- End Feature Item -->
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-box d-flex align-items-center">
+                        <i class="bi bi-check"></i>
+                        <h3>Proven Track Record</h3>
+                    </div>
+                    </div><!-- End Feature Item -->
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section><!-- End Features Section -->
+
+    <!-- Industries We Serve Section -->
+    <section id="features" class="features section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Industries We Serve</h2>
+        </div><!-- End Section Title -->
+            <div class="container" id="section_why">
+                <div class="col-xl-6 d-flex">
+                <div class="row align-self-center gy-4">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-box d-flex align-items-center">
+                        <i class="bi bi-check"></i>
+                        <h3>Manufacturing</h3>
+                    </div>
+                    </div><!-- End Feature Item -->
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-box d-flex align-items-center">
+                        <i class="bi bi-check"></i>
+                        <h3>Retail & E-commerce</h3>
+                    </div>
+                    </div><!-- End Feature Item -->
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-box d-flex align-items-center">
+                        <i class="bi bi-check"></i>
+                        <h3>Logistics & Supply Chain</h3>
+                    </div>
+                    </div><!-- End Feature Item -->
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-box d-flex align-items-center">
+                        <i class="bi bi-check"></i>
+                        <h3>Healthcare</h3>
+                    </div>
+                    </div><!-- End Feature Item -->
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                        <div class="feature-box d-flex align-items-center">
+                            <i class="bi bi-check"></i>
+                            <h3>Finance & Banking</h3>
+                        </div>
+                        </div><!-- End Feature Item -->
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section><!-- End Features Section -->
+
+    <!-- Call to Action Section -->
+    <section id="call-to-action" class="call-to-action section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row content justify-content-center align-items-center position-relative quality_policy_content">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="display-4 mb-4">Our Vision:</h2>
+            <p class="mb-4">To focus on cultivating long-term customer relationships rather than short-term transactions. We are committed to going beyond conventional business practices to demonstrate that we genuinely care for our clients and value the bonds we create.</p>
+            <!-- <a href="contact.html" class="btn btn-cta">Call To Action</a> -->
+          </div>
+          <!-- Abstract Background Elements -->
+          <div class="shape shape-1">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path d="M47.1,-57.1C59.9,-45.6,68.5,-28.9,71.4,-10.9C74.2,7.1,71.3,26.3,61.5,41.1C51.7,55.9,35,66.2,16.9,69.2C-1.3,72.2,-21,67.8,-36.9,57.9C-52.8,48,-64.9,32.6,-69.1,15.1C-73.3,-2.4,-69.5,-22,-59.4,-37.1C-49.3,-52.2,-32.8,-62.9,-15.7,-64.9C1.5,-67,34.3,-68.5,47.1,-57.1Z" transform="translate(100 100)"></path>
+            </svg>
+          </div>
+          <div class="shape shape-2">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path d="M41.3,-49.1C54.4,-39.3,66.6,-27.2,71.1,-12.1C75.6,3,72.4,20.9,63.3,34.4C54.2,47.9,39.2,56.9,23.2,62.3C7.1,67.7,-10,69.4,-24.8,64.1C-39.7,58.8,-52.3,46.5,-60.1,31.5C-67.9,16.4,-70.9,-1.4,-66.3,-16.6C-61.8,-31.8,-49.7,-44.3,-36.3,-54C-22.9,-63.7,-8.2,-70.6,3.6,-75.1C15.4,-79.6,28.2,-58.9,41.3,-49.1Z" transform="translate(100 100)"></path>
+            </svg>
+          </div>
+          <!-- Dot Pattern Groups -->
+          <div class="dots dots-1">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <pattern id="dot-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
+              </pattern>
+              <rect width="100" height="100" fill="url(#dot-pattern)"></rect>
+            </svg>
+          </div>
+          <div class="dots dots-2">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <pattern id="dot-pattern-2" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
+              </pattern>
+              <rect width="100" height="100" fill="url(#dot-pattern-2)"></rect>
+            </svg>
+          </div>
+          <div class="shape shape-3">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <path d="M43.3,-57.1C57.4,-46.5,71.1,-32.6,75.3,-16.2C79.5,0.2,74.2,19.1,65.1,35.3C56,51.5,43.1,65,27.4,71.7C11.7,78.4,-6.8,78.3,-23.9,72.4C-41,66.5,-56.7,54.8,-65.4,39.2C-74.1,23.6,-75.8,4,-71.7,-13.2C-67.6,-30.4,-57.7,-45.2,-44.3,-56.1C-30.9,-67,-15.5,-74,0.7,-74.9C16.8,-75.8,33.7,-70.7,43.3,-57.1Z" transform="translate(100 100)"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Call to Action Section -->
+
+    <!-- Quality Policy Section -->
+    <section id="alt-features" class="alt-features section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Quality Policy</h2>
+        <p>At Fusiontec Software, quality is not just a commitment — it is our business philosophy. Our Quality Policy is centered on:<br></p>
+      </div><!-- End Section Title -->
+      <div class="container">
+        <div class="quality_policys">
+          <div class="row gy-5">
+            <div class="col-xl-7 d-flex order-2 order-xl-1" data-aos="fade-up" data-aos-delay="200">
+              <div class="row align-self-center gy-5">
+                <div class="col-md-6 icon-box">
+                  <i class="bi bi-award"></i>
+                  <div>
+                    <h4>Excellence in Every Project Completion</h4>
+                  </div>
+                </div><!-- End Feature Item -->
+                <div class="col-md-6 icon-box">
+                  <i class="bi bi-card-checklist"></i>
+                  <div>
+                    <h4>Continuous process improvement to ensure customer satisfaction</h4>
+                  </div>
+                </div><!-- End Feature Item -->
+                <div class="col-md-6 icon-box">
+                  <i class="bi bi-dribbble"></i>
+                  <div>
+                    <h4>Delivering cost-effective technology that enhances productivity</h4>
+                  </div>
+                </div><!-- End Feature Item -->
+                <div class="col-md-6 icon-box">
+                  <i class="bi bi-filter-circle"></i>
+                  <div>
+                    <h4>Meeting delivery commitments with strategic planning and execution</h4>
+                  </div>
+                </div><!-- End Feature Item -->
+                <div class="col-md-6 icon-box">
+                  <i class="bi bi-lightning-charge"></i>
+                  <div>
+                    <h4>Creating a positive work environment that fosters growth and innovation</h4>
+                  </div>
+                </div><!-- End Feature Item -->
+              </div>
+            </div>
+            <div class="quality_policys_img">
+            <div class="col-xl-5 d-flex align-items-center order-1 order-xl-2 " data-aos="fade-up" data-aos-delay="100">
+              <img src="{% static 'software/img/values-3.png' %}" class="img-fluid" alt="">
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- Quality Policy Section -->
+
+{% endblock %}

@@ -1,0 +1,117 @@
+{% extends 'software/base2.html' %}
+
+{% load static %}
+
+{% block title %}Fusiontec Software - Privacy Policy{% endblock %}
+
+{% block content2 %}
+
+<!-- Topbar -->
+        <div class="topbar d-flex align-items-center justify-content-between px-3">
+          <div class="topbar-left">
+            <small class="ms-4"><i class="bi bi-phone me-1"></i>Office:<a href="tel:+914446072076">+91 044 – 46072076</a></small>
+            <small class="ms-4"><i class="bi bi-phone me-1"></i>Support:<a href="tel:+919841446699">+91 98414 46699</a></small>
+          </div>
+          <div class="topbar-right">
+            <small><i class="bi bi-envelope me-1"></i><a href="mailto:sales@fusiontec.com">sales@fusiontec.com</a></small>
+            <a href="https://www.facebook.com/fusiontecsoftware/" class="text-white ms-3"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.linkedin.com/company/fusiontec-software/" class="text-white ms-3"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto">
+        <img src="{% static 'software/img/fusiontec/logo.png' %}" alt="">
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{% url 'home' %}">Home<br></a></li>
+          <li><a href="{% url 'about_us' %}">About Us</a></li>
+          <li><a href="{% url 'career' %}">Careers</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li class="dropdown"><a href="#"><span>Downloads</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="static/software/brochure/Company Profile.pdf" download>Company Profile<i class="bi bi-download me-2"></i></a></li>
+              <li><a href="static/software/brochure/SCM ERP.pdf" download>SCM ERP<i class="bi bi-download me-2"></i></a></li>
+              <li><a href="static/software/brochure/Sales Order Processing ERP.pdf" download>Sales Order Processing ERP<i class="bi bi-download me-2"></i></a></li>
+              <li><a href="static/software/brochure/Container & Logistics ERP.pdf" download>Container & Logistics ERP<i class="bi bi-download me-2"></i></a></li>
+              <li><a href="static/software/brochure/hospital_ERP.pdf" download>Hospital Management ERP<i class="bi bi-download me-2"></i></a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <a class="btn-getstarted ms-2" href="/admin/" target="_blank">Admin login</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Privacy policy Section -->
+    <section id="hero" class="hero section">        
+          <!-- Terms & Conditions Section -->
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="privacy_section">
+                <div class="col-lg-10">
+                  <div class="p-5 rounded text-center " style=" background: none;">
+                    <h4 class="fw-bold text-primary mb-3">
+                      <i class="bi bi-shield-lock-fill me-2"></i>Privacy Policy
+                    </h4>
+                    <p class="mb-4 fw-semibold">Your Data, Our Responsibility</p>
+                    <p class="mb-4">
+                      At Fusiontec Software, we are committed to safeguarding your privacy and protecting your personal information. This Privacy Policy outlines how we collect, use, and secure data on our website.
+                    </p>
+                    <div class="text-start mx-auto" style="max-width: 800px;">
+                      <h5 class="text-primary fw-bold">1. Data Collection:</h5>
+                      <ul class="mb-4">
+                        <li>We collect information such as your name, email address, and phone number when you:</li>
+                        <li>Contact us via the website</li>
+                        <li>Submit a resume for a job application</li>
+                        <li>Request a consultation</li>
+                      </ul>
+                      <h5 class="text-primary fw-bold">2. Data Usage:</h5>
+                      <ul class="mb-4">
+                        <li>Provide the services you request</li>
+                        <li>Respond to inquiries and provide support</li>
+                        <li>Send updates on new products, services, and promotions</li>
+                      </ul>
+  
+                      <h5 class="text-primary fw-bold">3. Data Protection:</h5>
+                      <p class="mb-4">We implement strong security measures, including encryption and access control, to protect your data against unauthorized access, alteration, and misuse.</p>
+          
+                      <h5 class="text-primary fw-bold">4. Third-Party Sharing:</h5>
+                      <p class="mb-4">We do not share your data with third parties except as required to provide our services or comply with legal obligations.</p>
+          
+                      <h5 class="text-primary fw-bold">5. Data Retention:</h5>
+                      <p class="mb-4">We retain your data only as long as necessary to fulfill the purposes outlined in this policy or as required by law.</p>
+          
+                      <h5 class="text-primary fw-bold">All content, including text, graphics, and software, is the property of Fusiontec Software. Unauthorized use or distribution is strictly prohibited.</h5>
+                      <ul class="mb-4">
+                        <p><b>Disclaimer:</b>
+                            While we strive for accuracy, the information provided on the website is subject to change without notice.
+                        </p>
+                      </ul>
+                      <h5 class="text-primary fw-bold">Limitation of Liability:</h5>
+                      <ul class="mb-4">
+                        <p>
+                            Fusiontec Software is not liable for any direct, indirect, or incidental damages resulting from the use or inability to use the website or services.
+                        </p>
+                      </ul>
+                      <div>
+                      <a href="{% url 'terms' %}" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                        <span>[Read Full Terms & Conditions]</span>
+                        <i class="bi bi-arrow-right"></i>
+                      </a>
+                      </div>
+                  </div>
+                </div>
+            </div>
+              </div>
+            </div>
+        
+    </section>
+</main>
+
+
+{% endblock %}
