@@ -110,14 +110,15 @@
     </div>
 
     <div class="row">
-      <span class="label">Resume:</span>
-      <span class="value">
-        {% if application.resume %}
-          <a href="{{ application.resume.url }}" target="_blank" rel="noopener">Download Resume</a>
-        {% else %}
-          No resume attached.
-        {% endif %}
-      </span>
+      <p><span class="label">Resume Stats:</span>
+        <span class="value">
+          {% if application.resume %}
+            Resume Received
+          {% else %}
+            No resume attached.
+          {% endif %}
+        </span>
+      </p>
     </div>
   </div>
 </body>
