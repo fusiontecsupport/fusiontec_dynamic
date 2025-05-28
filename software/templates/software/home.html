@@ -377,8 +377,8 @@
     <!-- /Partners Section -->
 
     <!-- Client Section -->
-    <section id="client" class="clients section">
-      <div class="container section-title" data-aos="fade-up">
+    <section id="client" class="clients section pb-5">
+      <div class="container section-title pb-5" data-aos="fade-up">
         <h2>Clients</h2>
       </div>
 
@@ -405,42 +405,6 @@
     </section>
 
     <!-- /Client Section -->
-
-    <!-- Recent Posts Section -->
-    <section id="recent-posts" class="recent-posts section">
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Blog – Insights & Updates</h2>
-    <p>Stay Ahead with the Latest in IT & Consultancy</p>
-  </div>
-  <div class="container">
-    <div class="row gy-5">
-      {% for post in posts %}
-      <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'1' }}00">
-        <div class="post-item position-relative h-100">
-          <div class="post-img position-relative overflow-hidden">
-            {% if post.image %}
-              <img src="{{ post.image.url }}" class="img-fluid" alt="{{ post.title }}">
-            {% else %}
-              <img src="{% static 'software/img/default-blog-image.jpg' %}" class="img-fluid" alt="Default image">
-            {% endif %}
-
-            {% comment %} <span class="post-date">{{ post.post_date.year }}</span> {% endcomment %}
-            <span class="post-date">{{ post.post_date|date:"d/m/Y" }}</span>
-          </div>
-          <div class="post-content d-flex flex-column">
-            <h3 class="post-title">{{ post.title }}</h3>
-            <p>{{ post.content|truncatewords:20 }}</p>
-          </div>
-        </div>
-      </div>
-      {% empty %}
-      <p>No blog posts yet.</p>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- /Recent Posts Section -->
 
     
 {% endblock %}

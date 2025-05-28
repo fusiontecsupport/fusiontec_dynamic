@@ -1,9 +1,12 @@
+{% extends 'software/base2.html' %}
 
 {% load static %}
 
-{% block nav %}
+{% block title %}Fusiontec Software - Home{% endblock %}
 
- <!-- Topbar -->
+{% block content2 %}
+
+<!-- Topbar -->
         <div class="topbar d-flex align-items-center justify-content-between px-3">
           <div class="topbar-left">
             <small class="ms-4"><i class="bi bi-phone me-1"></i>Office:<a href="tel:+914446072076">+91 044 – 46072076</a></small>
@@ -16,31 +19,17 @@
           </div>
         </div>
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
+<header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
       <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto">
         <img src="{% static 'software/img/fusiontec/logo.png' %}" alt="">
       </a>
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Home<br></a></li>
-          <li class="dropdown"><a href="#about"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="{% url 'about_us' %}">Who We Are? </a></li>
-            </ul>
-          </li>
-          <li><a href="#services">Services</a></li>
-          <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#faq">F.A.Q</a></li>
-              <li><a href="#case_study">Case Study</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
-            </ul>
-          </li>
-          <li><a href="#clients">Partners</a></li>
-          <li><a href="#client">Clients</a></li>
-          <li><a href="{% url 'blog' %}">Blogs</a></li>
-          <li><a href="{% url 'career' %}">Careers</a></li>
+          <li><a href="{% url 'home' %}">Home<br></a></li>
+          <li><a href="{% url 'about_us' %}">About Us</a></li>
+          <li><a href="{% url 'blog' %}"class="active">Blogs</a></li>
+          <li><a href="{% url 'career' %}" >Careers</a></li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
           <li class="dropdown"><a href="#"><span>Downloads</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
@@ -54,8 +43,55 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      <a class="btn-getstarted ms-2" href="/admin/" target="_blank">Admin login</a>
-      </div>
+      <a class="btn-getstarted ms-2" href="/admin/" target="_blank">Admin login</a> 
+    </div>
   </header>
+<style>
+    .blog-image-fixed {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+</style>
+
+<main class="main">
+
+<!-- Recent Posts Section -->
+    <section id="recent-postds mt-5" class="recent-posts section">
+  <div class="container section-title mt-5 pt-5" data-aos="fade-up">
+    <h2>Blog – Insights & Updates</h2>
+    <p>Stay Ahead with the Latest in IT & Consultancy</p>
+  </div>
+  <div class="container">
+    <div class="row gy-5">
+      {% for post in posts %}
+      <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'1' }}00">
+        <div class="post-item position-relative h-100">
+          <div class="post-img position-relative overflow-hidden">
+            {% if post.image %}
+              {% comment %} <img src="{{ post.image.url }}" class="img-fluid" alt="{{ post.title }}"> {% endcomment %}
+              <img src="{{ post.image.url }}" class="img-fluid blog-image-fixed" alt="{{ post.title }}">
+            {% else %}
+              <img src="{% static 'software/img/default-blog-image.jpg' %}" class="img-fluid" alt="Default image">
+            {% endif %}
+
+            <span class="post-date">{{ post.post_date|date:"d/m/Y" }}</span>
+          </div>
+          <div class="post-content d-flex flex-column">
+            <h3 class="post-title">{{ post.title }}</h3>
+            <p>{{ post.content|truncatewords:20 }}</p>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <p>No blog posts yet.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- /Recent Posts Section -->
+
 
 {% endblock %}

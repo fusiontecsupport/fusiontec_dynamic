@@ -111,6 +111,11 @@ def career_application(request):
 def about_us(request):
     return render(request, 'software/about_us.html')
 
+def blog_list(request):
+    posts = BlogPost.objects.all().order_by('-post_date')
+    return render(request, 'software/blog.html', {'posts': posts})
+
+
 def contact(request):
     if request.method == 'POST':
         name = request.POST.get('name')

@@ -27,7 +27,7 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="{% url 'home' %}">Home<br></a></li>
-          <li class="dropdown"><a href="{% url 'about_us' %}" class="active"><span>About Us</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="{% url 'about_us' %}" ><span class="active">About Us</span><i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#abouts">Who We Are? </a></li>
               <li><a href="#features">Our Mission</a></li>
@@ -35,6 +35,7 @@
               <li><a href="#alt-features">Quality Policy</a></li>
             </ul>
           </li>
+          <li><a href="{% url 'blog' %}"class="active">Blogs</a></li>
           <li><a href="{% url 'career' %}">Careers</a></li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
           <li class="dropdown"><a href="#"><span>Downloads</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>

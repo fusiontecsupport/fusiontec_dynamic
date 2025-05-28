@@ -10,6 +10,9 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('terms/', views.terms, name='terms'),
     path('privacy/', views.privacy, name='privacy'),
+
+    path('blog/', views.blog_list, name='blog'),
+
     
     # ✅ Add this line (assuming you have a view called job_application_form)
     path('apply/', views.career_application, name='job_application_form'),
