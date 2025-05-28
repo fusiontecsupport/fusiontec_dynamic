@@ -46,39 +46,10 @@
       <a class="btn-getstarted ms-2" href="/admin/" target="_blank">Admin login</a> 
     </div>
   </header>
-<style>
-    .blog-image-fixed {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-</style>
-
-
-      <!--<div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'1' }}00">
-        <div class="post-item position-relative h-100">
-          <div class="post-img position-relative overflow-hidden">
-            {% if post.image %}
-              {% comment %} <img src="{{ post.image.url }}" class="img-fluid" alt="{{ post.title }}"> {% endcomment %}
-              <img src="{{ post.image.url }}" class="img-fluid blog-image-fixed" alt="{{ post.title }}">
-            {% else %}
-              <img src="{% static 'software/img/default-blog-image.jpg' %}" class="img-fluid" alt="Default image">
-            {% endif %}
-
-            <span class="post-date">{{ post.post_date|date:"d/m/Y" }}</span>
-          </div>
-          <div class="post-content d-flex flex-column">
-            <h3 class="post-title">{{ post.title }}</h3>
-            <p>{{ post.content|truncatewords:20 }}</p>
-          </div>
-        </div>
-      </div>-->
-   
 
 <main class="main">
 
-<!-- Recent Posts Section -->
+  <!-- Recent Posts Section -->
     <section id="recent-postds mt-5" class="recent-posts section">
   <div class="container section-title mt-5 pt-5" data-aos="fade-up">
     <h2>Blog – Insights & Updates</h2>
@@ -87,49 +58,48 @@
   <div class="container">
     <div class="row gy-5">
       {% for post in posts %}
-<div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'1' }}00">
-  <div class="post-item position-relative h-100">
-    <div class="post-img position-relative overflow-hidden">
-      {% if post.image and post.image.name %}
-        <img src="{{ post.image.url }}" class="img-fluid blog-image-fixed" alt="{{ post.title }}">
-      {% else %}
-        <img src="{% static 'software/img/default-blog-image.jpg' %}" class="img-fluid blog-image-fixed" alt="Default image">
-      {% endif %}
-      <span class="post-date">{{ post.post_date|date:"d/m/Y" }}</span>
-    </div>
+        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'1' }}00">
+          <div class="post-item position-relative h-100">
+            <div class="post-img position-relative overflow-hidden">
+              {% if post.image and post.image.name %}
+                <img src="{{ post.image.url }}" class="img-fluid blog-image-fixed" alt="{{ post.title }}">
+              {% else %}
+                <img src="{% static 'software/img/default-blog-image.jpg' %}" class="img-fluid blog-image-fixed" alt="Default image">
+              {% endif %}
+              <span class="post-date">{{ post.post_date|date:"d/m/Y" }}</span>
+            </div>
 
-    <div class="post-content d-flex flex-column">
-      <h3 class="post-title">{{ post.title }}</h3>
-      <p>{{ post.content|truncatewords:20 }}</p>
-      <div class="mt-auto d-flex justify-content-between">
-        <button class="btn btn-sm btn-outline-primary view-btn" 
-        data-title="{{ post.title }}" 
-        data-content="{{ post.content|striptags }}" 
-        data-image="{% if post.image and post.image.name %}{{ post.image.url }}{% else %}{% static 'software/img/default-blog-image.jpg' %}{% endif %}"
-        data-url="{{ request.build_absolute_uri }}"> 
-  <i class="bi bi-eye"></i> View
-</button>
+            <div class="post-content d-flex flex-column">
+              <h3 class="post-title">{{ post.title }}</h3>
+              <p>{{ post.content|truncatewords:20 }}</p>
+              <div class="mt-auto d-flex justify-content-between">
+                <button class="btn btn-sm btn-outline-primary view-btn" 
+                        data-title="{{ post.title }}" 
+                        data-content="{{ post.content|striptags }}" 
+                        data-image="{% if post.image and post.image.name %}{{ post.image.url }}{% else %}{% static 'software/img/default-blog-image.jpg' %}{% endif %}"
+                        data-url="{{ request.build_absolute_uri }}"> 
+                  <i class="bi bi-eye"></i> View
+                </button>
 
-        <button class="btn btn-sm btn-outline-success share-btn" data-url="{{ request.build_absolute_uri }}"> 
-          <i class="bi bi-share-fill"></i> Share
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
+                <button class="btn btn-sm btn-outline-success share-btn" data-url="{{ request.build_absolute_uri }}"> 
+                  <i class="bi bi-share-fill"></i> Share
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<!-- Modal -->
-<div id="blogModal" class="modal-custom d-none">
-  <div class="modal-backdrop"></div>
-  <div class="modal-content-custom">
-    <button class="close-btn">&times;</button>
-    <img id="modalImage" src="" class="modal-img"alt="Blog Image">
-    <h3 id="modalTitle"></h3>
-    <p id="modalContent"></p>
-  </div>
-</div>
-
-
+        <!-- Modal -->
+        <div id="blogModal" class="modal-custom d-none">
+          <div class="modal-backdrop"></div>
+          <div class="modal-content-custom">
+            <button class="close-btn">&times;</button>
+            <img id="modalImage" src="" class="modal-img"alt="Blog Image">
+            <h3 id="modalTitle"></h3>
+            <p id="modalContent"></p>
+          </div>
+        </div>
+      
       {% empty %}
       <p>No blog posts yet.</p>
       {% endfor %}
@@ -137,79 +107,10 @@
   </div>
 </section>
 
-<style>
-  .modal-content-custom {
-  position: relative;
-  background: white;
-  padding: 20px;
-  max-width: 700px;
-  width: 90%;
-  max-height: 80vh;       /* limit height */
-  overflow-y: auto;        /* allow scroll */
-  z-index: 1051;
-  border-radius: 8px;
-  transition: transform 0.3s ease-in-out;
-  cursor: zoom-in;
-}
-
-.modal-content-custom.zoomed {
-  transform: scale(1.2);  /* zoom effect */
-  cursor: zoom-out;
-}
-
-  /* blog view css */
-.modal-img {
-  width: 100%;
-  max-height: 300px;       /* fixed max height */
-  object-fit: cover;       /* cover container, crop if needed */
-  object-position: center; /* center image */
-  display: block;
-  margin: 0 auto;
-  border-radius: 15px;
-}
-  
- .modal-custom {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1050;
-}
-
-.modal-custom.d-none {
-  display: none;
-}
-
-.modal-backdrop {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1040;
-}
-
-.modal-content-custom {
-  position: relative;
-  background: white;
-  padding: 20px;
-  max-width: 700px;
-  width: 90%;
-  z-index: 1051;
-  border-radius: 8px;
-}
-
-.close-btn {
-  position: absolute;
-  top: -5px; right: 4px;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-</style>
+</main>
 <!-- /Recent Posts Section -->
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('blogModal');
   const modalImage = document.getElementById('modalImage');
   const modalTitle = document.getElementById('modalTitle');
@@ -260,8 +161,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-
-
-
 
 {% endblock %}
