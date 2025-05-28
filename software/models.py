@@ -4,7 +4,9 @@ class BlogPost(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
     post_date = models.DateTimeField(auto_now_add=True, null=True, blank=True)
-    image = models.ImageField(upload_to='software/blog/', null=True, blank=True)
+    # image = models.ImageField(upload_to='software/blog/', null=True, blank=True)
+    image = models.ImageField(upload_to='software/blog/', blank=True, null=True, default='software/img/default-blog-image.jpg')
+
 
     def __str__(self):
         return self.title

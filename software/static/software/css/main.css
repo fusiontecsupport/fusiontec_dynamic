@@ -289,6 +289,11 @@ h6 {
 }
 
 /*--------------------------------------------------------------
+# blogpage Section
+--------------------------------------------------------------*/
+
+
+
 /* client logos */
 /* Horizontal scroll container */
 .client-scroll-container {
@@ -351,7 +356,6 @@ h6 {
     animation: scroll-left 20s linear infinite;
   }
 }
-
 
 /* css for image preview */
 /* Modal Styles */
@@ -433,11 +437,6 @@ h6 {
   background-color: #157347;
 }
 
-
-
-
-
-
 /*--------------------------------------------------------------
 # Floating Icon Section
 --------------------------------------------------------------*/
@@ -514,7 +513,6 @@ h6 {
   visibility: visible;
   opacity: 1;
 }
-
 
 /*--------------------------------------------------------------
 # Faq Section
