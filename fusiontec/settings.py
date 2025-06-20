@@ -27,16 +27,13 @@ SECRET_KEY = 'django-insecure-xqj+_22xy8nwft=$ywgo0x%rpp#uyz_hle%3#2ukznka&wtl^n
 DEBUG = True
 
 ALLOWED_HOSTS = []
-# ALLOWED_HOSTS = ["erfara.pythonanywhere.com"]
-# CSRF_TRUSTED_ORIGINS = [
-#    "https://erfara.pythonanywhere.com/"
-# ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'jazzmin',
+    'whitenoise.runserver_nostatic',  # used for static to work in production server
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,6 +48,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',   # used for static to work in production server
     'django.contrib.sessions.middleware.SessionMiddleware',
     'software.middleware.NoCacheMiddleware',  # added for no cache
     'django.middleware.common.CommonMiddleware',
@@ -127,23 +125,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),
-# ]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = BASE_DIR / 'media'
 
-# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# AUTH_USER_MODEL = 'authentication.CustomUser'
-
-# settings.py
-# LOGIN_REDIRECT_URL = '/'
-# LOGOUT_REDIRECT_URL = '/login/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

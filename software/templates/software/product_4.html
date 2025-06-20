@@ -1,0 +1,284 @@
+{% extends 'software/base2.html' %}
+{% load static %}
+{% block title %}Fusiontec Software - Product-4{% endblock %}
+
+{% block content2 %}
+<!-- Include AOS CSS and JS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<!-- Topbar -->
+<div class="topbar d-flex flex-column flex-md-row align-items-center justify-content-between px-3 py-2 text-center text-md-start">
+  <div class="topbar-left mb-2 mb-md-0">
+    <small class="me-3"><i class="bi bi-telephone-fill me-1"></i>Office: <a href="tel:+914446072076">+91 044 – 46072076</a></small>
+    <small><i class="bi bi-phone me-1"></i>Support: <a href="tel:+919841446699">+91 98414 46699</a></small>
+  </div>
+  <div class="topbar-right">
+    <small class="ms-4">GST : 33AABFF1764F1ZU</small>
+    <small class="ms-4"><i class="bi bi-envelope me-1"></i><a href="mailto:sales@fusiontec.com">sales@fusiontec.com</a></small>
+    <a href="https://www.facebook.com/fusiontecsoftware/" class="text-white ms-3" target="_blank"><i class="bi bi-facebook"></i></a>
+    <a href="https://www.linkedin.com/company/fusiontec-software/" class="text-white ms-3" target="_blank"><i class="bi bi-linkedin"></i></a>
+  </div>
+</div>
+
+<!-- Header -->
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="container-fluid container-xl position-relative d-flex align-items-center">
+    <a href="{% url 'home' %}" class="logo d-flex align-items-center me-auto">
+      <img src="{% static 'software/img/fusiontec/logo1.png' %}" alt="">
+    </a>
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about_us' %}">About Us</a></li>
+        <li class="dropdown"><a href="#"><span class="active">Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="{% url 'SCM_ERP' %}">Supply Chain Management ERP</a></li>
+            <li><a href="{% url 'SOP_ERP' %}">Sales Order Processing ERP</a></li>
+            <li><a href="{% url 'CL_ERP' %}">Container & Logistics ERP</a></li>
+            <li><a href="{% url 'HM_ERP' %}">Hospital Management ERP</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'blog' %}">Blogs</a></li>
+        <li><a href="{% url 'career' %}">Careers</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li class="dropdown"><a href="#"><span>Downloads</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="{% static 'software/brochure/Company Profile.pdf' %}" download>Company Profile <i class="bi bi-download me-2"></i></a></li>
+            <li><a href="{% static 'software/brochure/SCM ERP.pdf' %}" download>SCM ERP <i class="bi bi-download me-2"></i></a></li>
+            <li><a href="{% static 'software/brochure/Sales Order Processing ERP.pdf' %}" download>Sales Order Processing ERP <i class="bi bi-download me-2"></i></a></li>
+            <li><a href="{% static 'software/brochure/Container & Logistics ERP.pdf' %}" download>Container & Logistics ERP <i class="bi bi-download me-2"></i></a></li>
+            <li><a href="{% static 'software/brochure/hospital_ERP.pdf' %}" download>Hospital Management ERP <i class="bi bi-download me-2"></i></a></li>
+          </ul>
+        </li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+    <a class="btn-getstarted ms-2" href="/admin/" target="_blank">Admin login</a>
+  </div>
+</header>
+
+<main class="main mt-5">
+  <section id="abouts" class="abouts section text-center">
+    <div class="container" data-aos="fade-up">
+        <div>
+            <h3 class="text-danger mt-4">HOSPITAL MANAGEMENT INFORMATION SYSTEM(HMIS) ERP
+            <span>
+                <button class="btn btn-sm btn-outline-secondary me-2 eye-btn" data-img="{% static 'software/img/fusiontec/hospital_management_ERP.png' %}" aria-label="Preview Image">
+                <i class="bi bi-eye"></i>
+                </button>
+            </span>
+            </h3>
+            <img src="{% static 'software/img/fusiontec/hospital_management_ERP.png' %}" alt="ERP Container Image" class="img-fluid mt-3" style="max-height: 600px;">
+        </div>
+      <!-- Begin Info Sections -->
+      <div class="info-sections mt-5">
+        <!-- Section Block -->
+        <div class="section-block text-center mt-5" data-aos="fade-up">
+          <h5 class="bg-danger text-white p-2 d-inline-block">Case Study</h5>
+          <div class="d-flex justify-content-center mt-3">
+            <div class="text-start" style="max-width: 720px;">
+              <p><strong>Challenge:</strong> A multi-specialty hospital struggled with fragmented patient records, manual billing, and poor inter-department communication.</p>
+              <p><strong>Solution:</strong> Implemented Fusiontec ERP – HMIS to centralize patient data, automate billing, and unify all hospital modules.</p>
+              <p><strong>Impact:</strong> Reduced patient wait times by 40%, improved billing accuracy by 90%, and enhanced coordination across departments.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-block" data-aos="fade-up">
+          <h5 class="bg-danger text-white p-2">WHY CHOOSE FUSIONTEC ERP - HMIS?</h5>
+          <div class="text-start" style="max-width: 720px;">
+            <p>
+              Fusiontec ERP as an advanced Hospital Management Information System designed to streamiine hospital operations.
+              Improve Patient care, and boost overall efficiency. 
+            </p>
+          </div>
+        </div>
+
+        <div class="section-block" data-aos="fade-up" data-aos-delay="100">
+          <h5 class="bg-danger text-white p-2">CORE FEATURES</h5>
+          <div>
+            <h6 class="bg-secondary text-white p-2"style="max-width:200px;">Patient Management</h6>
+            <ul class="ps-3"style="width:400px;"> 
+              <li>Centralized Patient Registration</li>
+              <li>Appointment Scheduling & Reminders</li>
+            </ul>
+          </div>
+          <div>
+            <h6 class="bg-secondary text-white p-2"style="max-width:150px;">Diagnostics & Lab</h6>
+            <ul class="ps-3"style="width:400px;"> 
+              <li>Integrated Lab, X-Ray and Scan Modules</li>
+              <li>Automated Test Reports & Billing</li>
+              <li>Real-time Result Sharing with Doctors & Patients</li>
+            </ul>
+          </div>
+          <div>
+            <h6 class="bg-secondary text-white p-2"style="max-width:150px;">Billing & Accounts</h6>
+            <ul class="ps-3"style="width:400px;">
+              <li>Automaticd Billing for OP, IP, Pharmacy and Labs</li>
+              <li>Advance, Refund, Discount Tracking</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-block" data-aos="fade-up" data-aos-delay="200">
+          <h5 class="bg-danger text-white p-2">REPORTS & ANALYTICS</h5>
+          <ul class="ps-3">
+            <li>Daily, Weekly and Monthly MIS Reports</li>
+            <li>Revenue Summaries, Audit logs & Occupancy rates</li>
+            <li>Graphical Dashboards and Forecasting</li>
+          </ul>
+        </div>
+
+        <div class="section-block" data-aos="fade-up" data-aos-delay="250">
+          <h5 class="bg-danger text-white p-2">USER-SPECIFIC DASHBOARDS</h5>
+          <div>
+            <h6 class="bg-secondary text-white p-2"style="max-width:150px;">Management</h6>
+            <ul class="ps-3"style="width:400px;"> 
+              <li>Instant access to reports, revenue and performance insights</li>
+              <li>Tools for planning, budgeting and forecasting</li>
+            </ul>
+          </div>
+          <div>
+            <h6 class="bg-secondary text-white p-2" style="max-width:150px;">Doctors</h6>
+            <ul class="ps-3"style="width:400px;"> 
+              <li>Patient History, Test Reports & Appointments at a glance</li>
+              <li>Efficient patient tracking and care coordination</li>
+            </ul>
+          </div>
+          <div>
+            <h6 class="bg-secondary text-white p-2" style="max-width:150px;">Staff & Admin</h6>
+            <ul class="ps-3"style="width:400px;"> 
+              <li>Manage Bed & Management</li>
+              <li>Track Equipment Maintenance</li>
+            </ul>
+          </div>
+          <div>
+            <h6 class="bg-secondary text-white p-2" style="max-width:150px;">Patients</h6>
+            <ul class="ps-3"style="width:400px;"> 
+              <li>Online appointments</li>
+              <li>View tab reports & pay bills</li>
+              <li>Room Availability & Consultant info</li>
+            </ul>
+          </div>
+        </div>
+
+
+        
+      </div>
+      <!-- Demo YouTube Video -->
+        <div class="mt-4 d-flex justify-content-center">
+            <div class="ratio ratio-16x9" style="max-width: 720px; width: 100%;">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="ERP Demo Video" allowfullscreen style="border-radius: 8px;"></iframe>
+            </div>
+        </div>
+        <div class="pt-5 pb-5">
+          Please contact us for any queries at <a href="mailto:support@fusiontec.com">support@fusiontec.com</a>
+        </div>
+    </div>
+  </section>
+</main>
+
+<!-- Modal Image Preview -->
+<div id="imageModal" class="custom-modal d-none" role="dialog" aria-modal="true">
+  <div class="custom-modal-backdrop"></div>
+  <div class="custom-modal-content">
+    <button class="custom-close" aria-label="Close modal">&times;</button>
+    <img id="modalImage" src="" alt="Preview" />
+    <a id="downloadImage" href="#" download>
+      <i class="bi bi-download"></i> Download
+    </a>
+  </div>
+</div>
+
+<style>
+.info-sections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.section-block ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  text-align: left;
+  max-width: 600px;
+}
+
+.section-block h5 {
+  width: fit-content;
+  padding: 0.5rem 1.25rem;
+  margin-bottom: 1rem;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const closeBtn = modal.querySelector(".custom-close");
+  const backdrop = modal.querySelector(".custom-modal-backdrop");
+  const downloadBtn = document.getElementById("downloadImage");
+
+  document.querySelectorAll(".eye-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const imgSrc = btn.getAttribute("data-img");
+      modalImg.src = imgSrc;
+      downloadBtn.href = imgSrc;
+      modal.classList.remove("d-none");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  const closeModal = () => {
+    modal.classList.add("d-none");
+    modalImg.src = "";
+    document.body.style.overflow = "";
+    modalImg.style.transform = "scale(1)";
+    modalImg.style.transformOrigin = "center";
+    modalImg.style.cursor = "zoom-in";
+    zoomed = false;
+  };
+
+  closeBtn.addEventListener("click", closeModal);
+  backdrop.addEventListener("click", closeModal);
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && !modal.classList.contains("d-none")) {
+      closeModal();
+    }
+  });
+
+  // Zoom functionality
+  let zoomed = false;
+  modalImg.addEventListener("click", (e) => {
+    const rect = modalImg.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    const offsetY = e.clientY - rect.top;
+    const xPercent = (offsetX / modalImg.width) * 100;
+    const yPercent = (offsetY / modalImg.height) * 100;
+
+    if (!zoomed) {
+      modalImg.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+      modalImg.style.transform = "scale(2.5)";
+      modalImg.style.cursor = "zoom-out";
+    } else {
+      modalImg.style.transformOrigin = "center";
+      modalImg.style.transform = "scale(1)";
+      modalImg.style.cursor = "zoom-in";
+    }
+    zoomed = !zoomed;
+  });
+});
+</script>
+{% endblock %}

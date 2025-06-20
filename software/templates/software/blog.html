@@ -9,11 +9,12 @@
 <!-- Topbar -->
         <div class="topbar d-flex align-items-center justify-content-between px-3">
           <div class="topbar-left">
-            <small class="ms-4"><i class="bi bi-telephone-fill me-1"></i>Office:<a href="tel:+914446072076">+91 044 – 46072076</a></small>
-            <small class="ms-4"><i class="bi bi-phone me-1"></i>Support:<a href="tel:+919841446699">+91 98414 46699</a></small>
+            <small class="ms-4"><i class="bi bi-telephone-fill me-1"></i>Office :<a href="tel:+914446072076"> +91 044 – 46072076</a></small>
+            <small class="ms-4"><i class="bi bi-phone me-1"></i>Support :<a href="tel:+919841446699"> +91 98414 46699</a></small>
           </div>
           <div class="topbar-right">
-            <small><i class="bi bi-envelope me-1"></i><a href="mailto:sales@fusiontec.com">sales@fusiontec.com</a></small>
+            <small class="ms-4">GST : 33AABFF1764F1ZU</small>
+            <small class="ms-4"><i class="bi bi-envelope me-1"></i><a href="mailto:sales@fusiontec.com">sales@fusiontec.com</a></small>
             <a href="https://www.facebook.com/fusiontecsoftware/" class="text-white ms-3" target="_blank"><i class="bi bi-facebook"></i></a>
             <a href="https://www.linkedin.com/company/fusiontec-software/" class="text-white ms-3" target="_blank"><i class="bi bi-linkedin"></i></a>
           </div>
@@ -28,6 +29,14 @@
         <ul>
           <li><a href="{% url 'home' %}">Home<br></a></li>
           <li><a href="{% url 'about_us' %}">About Us</a></li>
+          <li class="dropdown"><a href="#"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{% url 'SCM_ERP' %}">Supply Chain Management ERP</a></li>
+              <li><a href="{% url 'SOP_ERP' %}">Sales Order Processing ERP</a></li>
+              <li><a href="{% url 'CL_ERP' %}">Container & Logistics ERP</a></li>
+              <li><a href="{% url 'HM_ERP' %}">Hospital Management ERP</a></li>
+            </ul>
+          </li>
           <li><a href="{% url 'blog' %}"class="active">Blogs</a></li>
           <li><a href="{% url 'career' %}" >Careers</a></li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
@@ -43,16 +52,16 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      <a class="btn-getstarted ms-2" href="/admin/" target="_blank">Admin login</a> 
     </div>
+    <a class="btn-getstarted ms-2" href="/admin/" target="_blank">Admin login</a> 
   </header>
 
 <main class="main">
 
   <!-- Recent Posts Section -->
-    <section id="recent-postds mt-5" class="recent-posts section">
+    <section id="recent-postds mt-5 pt-5" class="recent-posts section">
   <div class="container section-title mt-5 pt-5" data-aos="fade-up">
-    <h2>Blog – Insights & Updates</h2>
+    <h2 style="margin-top:20px;">Blog – Insights & Updates</h2>
     <p>Stay Ahead with the Latest in IT & Consultancy</p>
   </div>
   <div class="container">

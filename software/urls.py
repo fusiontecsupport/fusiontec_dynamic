@@ -10,8 +10,14 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('terms/', views.terms, name='terms'),
     path('privacy/', views.privacy, name='privacy'),
-
     path('blog/', views.blog_list, name='blog'),
+
+    path('SCM_ERP/', views.SCM_ERP, name='SCM_ERP'),
+    path('SOP_ERP/', views.SOP_ERP, name='SOP_ERP'),
+    path('CL_ERP/', views.CL_ERP, name='CL_ERP'),
+    path('HM_ERP/', views.HM_ERP, name='HM_ERP'),
+
+
 
     
     # ✅ Add this line (assuming you have a view called job_application_form)

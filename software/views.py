@@ -163,3 +163,15 @@ def terms(request):
 
 def privacy(request):
     return render(request, 'software/privacy.html')
+
+def SCM_ERP(request):
+    return render(request, 'software/product_1.html')
+
+def  SOP_ERP(request):
+    return render(request, 'software/product_2.html')
+
+def CL_ERP(request):
+    return render(request, 'software/product_3.html')
+
+def HM_ERP(request):
+    return render(request, 'software/product_4.html')
